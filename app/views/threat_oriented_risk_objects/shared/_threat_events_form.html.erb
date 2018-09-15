@@ -1,0 +1,18 @@
+<fieldset id="threat_events_form" class="usa-fieldset-inputs hidden">
+  <legend>Threat Event(s)</legend>
+
+  <ul class="usa-unstyled-list">
+    <% @threat_events.each do |event| %>
+      <li class="adversarial_<%= event.is_adversarial %>">
+        <input id="threat_event_<%= event.id %>" type="checkbox" name="threat_event_<%= event.id %>" value="<%= event.id %>">
+
+        <label for="threat_event_<%= event.id %>">
+          <%= event.category %> - <%= event.ttp %>
+          <span class="usa-form-hint">
+            <%= event.description %>
+          </span>
+        </label>
+      </li>
+    <% end %>
+  </ul>
+</fieldset>

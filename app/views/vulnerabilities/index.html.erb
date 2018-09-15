@@ -1,0 +1,72 @@
+<%- view_title "Vulnerabilities" %>
+
+<% content_for :main do %>
+<section class="usa-grid usa-section">
+  <div class="usa-width-one-third">
+    <h2>Vulnerabilities <br/><small>and Predisposing Conditions</small></h2>
+    <p><em>Risk Factors Affecting the Likelihood of Successful Threat Exploitation</em></p>
+  </div>
+  <div class="usa-width-two-thirds">
+    <p>This appendix provides: (i) a description of potentially useful inputs to the vulnerability and predisposing condition identification task; (ii) an exemplary taxonomy of predisposing conditions; (iii) exemplary assessment scales for assessing the severity of vulnerabilities and the pervasiveness of predisposing conditions; and (iv) a set of templates for summarizing and documenting the results of the vulnerability and predisposing condition identification task. The taxonomy and assessment scales in this appendix can be used by organizations as a starting point with appropriate tailoring to adjust for any organization-specific conditions. Tables F-3 and F-6, outputs from Task 2-3, provide relevant inputs to the risk tables in Appendix I.</p>
+  </div>
+</section>
+<section class="usa-grid usa-section">
+  <div class="usa-width-one-whole">
+    <table class="usa-table-borderless">
+      <caption>Table F-2: Vulnerability Severity</caption>
+      <thead>
+        <tr>
+          <th scope="col">Qualitative</th>
+          <th scope="col">Quantitative</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @vulnerability_severities.each do |severity| %>
+        <tr>
+          <th scope="row"><%= severity.qualitative %></th>
+          <td><%= severity.quantitative %></td>
+          <td><%= severity.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <table class="usa-table-borderless">
+      <caption>Table F-4: Taxonomy of Predisposing Conditions</caption>
+      <thead>
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @predisposing_conditions.each do |condition| %>
+        <tr>
+          <th scope="row"><%= condition.category %></th>
+          <td><%= condition.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <table class="usa-table-borderless">
+      <caption>Table F-5: Pervasiveness of Predisposing Condition</caption>
+      <thead>
+        <tr>
+          <th scope="col">Qualitative</th>
+          <th scope="col">Quantitative</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @predisposing_condition_pervasivenesses.each do |pervasiveness| %>
+        <tr>
+          <th scope="row"><%= pervasiveness.qualitative %></th>
+          <td><%= pervasiveness.quantitative %></td>
+          <td><%= pervasiveness.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+<% end %>

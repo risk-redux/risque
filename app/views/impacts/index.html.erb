@@ -1,0 +1,53 @@
+<%- view_title "Impacts" %>
+
+<% content_for :main do %>
+<section class="usa-grid usa-section">
+  <div class="usa-width-one-third">
+    <h2>Impacts</h2>
+    <p><em>Effects of Threat Events on Organizations, Individuals, and the Nation</em></p>
+  </div>
+  <div class="usa-width-two-thirds">
+    <p>This appendix provides: (i) a description of useful inputs to the impact determination task; (ii) representative examples of adverse impacts to organizational operations and assets, individuals, other organizations, or the Nation; (iii) exemplary assessment scales for assessing the impact of threat events and the range of effect of threat events; and (iv) a template for summarizing and documenting the results of the impact determination Task 2-5. The assessment scales in this appendix can be used as a starting point with appropriate tailoring to adjust for any organization-specific conditions. Table H-4, an output from Task 2-5, provides relevant inputs to the risk tables in Appendix I.</p>
+  </div>
+</section>
+<section class="usa-grid usa-section">
+  <div class="usa-width-one-whole">
+    <table class="usa-table-borderless">
+      <caption>Table H-2: Examples of Adverse Impacts</caption>
+      <thead>
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @adverse_impacts.each do |impact| %>
+        <tr>
+          <th scope="row"><%= impact.category %></th>
+          <td><%= impact.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <table class="usa-table-borderless">
+      <caption>Table H-3: Impact of Threat Events</caption>
+      <thead>
+        <tr>
+          <th scope="col">Qualitative</th>
+          <th scope="col">Quantitative</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @threat_event_impacts.each do |impact| %>
+        <tr>
+          <th scope="row"><%= impact.qualitative %></th>
+          <td><%= impact.quantitative %></td>
+          <td><%= impact.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+<% end %>

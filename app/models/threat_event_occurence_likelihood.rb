@@ -1,0 +1,2 @@
+class ThreatEventOccurenceLikelihood < ApplicationRecord
+end

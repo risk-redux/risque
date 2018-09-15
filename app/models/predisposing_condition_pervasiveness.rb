@@ -1,0 +1,2 @@
+class PredisposingConditionPervasiveness < ApplicationRecord
+end

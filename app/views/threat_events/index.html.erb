@@ -1,0 +1,53 @@
+<%- view_title "Threat Events" %>
+
+<% content_for :main do %>
+<section class="usa-grid usa-section">
+  <div class="usa-width-one-third">
+    <h2>Threat Events</h2>
+    <p><em>Representative Threat Events Initiated by Threat Sources</em></p>
+  </div>
+  <div class="usa-width-two-thirds">
+    <p>This appendix provides: (i) a description of potentially useful inputs to the threat event identification task; (ii) representative examples of adversarial threat events expressed as tactics, techniques, and procedures (TTPs) and non-adversarial threat events; (iii) an exemplary assessment scale for the relevance of those threat events; and (iv) templates for summarizing and documenting the results of the threat identification Task 2-2. Organizations can eliminate certain threat events from further consideration if no adversary with the necessary capability has been identified.51 Organizations can also modify the threat events provided to describe specific TTPs with sufficient detail52 and at the appropriate classification level.53 Organizations can use the representative threat events and predicated/expected values for the relevance of those events as a starting point with tailoring to adjust for any organization-specific conditions. Table E-5, an output from Task 2-2, provides relevant inputs to the risk tables in Appendix I.</p>
+  </div>
+</section>
+<section class="usa-grid usa-section">
+  <div class="usa-width-one-whole">
+    <table class="usa-table-borderless">
+      <caption>Table E-2: Representative Examples – Adversarial Threat Events</caption>
+      <thead>
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">TTP</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @adversarial_threat_events.each do |event| %>
+        <tr>
+          <th scope="row"><%= event.category %></th>
+          <td><%= event.ttp %></td>
+          <td><%= event.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <table class="usa-table-borderless">
+      <caption>Table E-3: Representative Examples – Non-Adversarial Threat Events</caption>
+      <thead>
+        <tr>
+          <th scope="col">Threat Event</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @non_adversarial_threat_events.each do |event| %>
+        <tr>
+          <td><%= event.category %></td>
+          <td><%= event.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+<% end %>

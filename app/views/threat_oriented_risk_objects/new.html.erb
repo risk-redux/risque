@@ -1,0 +1,20 @@
+<%- view_title "New Threat-Oriented Risk Object" %>
+
+<% content_for :main do %>
+<section class="usa-grid usa-section">
+  <div class="usa-width-one-whole">
+    <h2>New Threat-Oriented Risk Object</h2>
+  </div>
+
+  <div class="usa-width-one-whole">
+    <form class="usa-form">
+      <%= meta_form() %>
+      <%= threat_source_form(@threat_sources) %>
+      <%= adversarial_capabilities_form(@adversarial_capabilities) %>
+      <%= adversarial_intents_form(@adversarial_intents) %>
+      <%= adversarial_targetings_form(@adversarial_targetings) %>
+      <%= threat_events_form(@threat_events) %>
+    </form>
+  </div>
+</section>
+<% end %>
