@@ -1,6 +1,6 @@
 FROM ruby:2.5-rc
 
-MAINTAINER Karim Said <karim.a.said@nasa.gov>
+MAINTAINER Karim Said <karim@egyptiankarim.com>
 
 # Throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
