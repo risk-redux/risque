@@ -1,74 +1,85 @@
 <%- view_title "Likelihoods" %>
 
 <% content_for :main do %>
-<section class="usa-grid usa-section">
-  <div class="usa-width-one-third">
-    <h2>Likelihoods</h2>
-    <p><em>Determining the Likelihood of Threat Events Causing Adverse Impacts</em></p>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h2>Likelihoods</h2>
+      <p><em>Determining the Likelihood of Threat Events Causing Adverse Impacts</em></p>
+    </div>
+    <div class="col-8">
+      <p>This appendix provides:
+        <ol>
+          <li>a description of potentially useful inputs to the likelihood55 determination task; and</li>
+          <li>exemplary assessment scales for assessing the likelihood of threat event initiation/occurrence, the likelihood of threat events resulting in adverse impacts, and the overall likelihood of threat events being initiated or occurring and doing damage to organizational operations, assets, or individuals.</li>
+        </ol>
+        
+        The assessment scales in this appendix can be used by organizations as a starting point with appropriate tailoring to adjust for any organization-specific conditions. Tables G-2, G-3, G-4, and G-5, outputs from Task 2-4, provide relevant inputs to the risk tables in Appendix I.
+      </p>
+    </div>
   </div>
-  <div class="usa-width-two-thirds">
-    <p>This appendix provides: (i) a description of potentially useful inputs to the likelihood55 determination task; and (ii) exemplary assessment scales for assessing the likelihood of threat event initiation/occurrence, the likelihood of threat events resulting in adverse impacts, and the overall likelihood of threat events being initiated or occurring and doing damage to organizational operations, assets, or individuals. The assessment scales in this appendix can be used by organizations as a starting point with appropriate tailoring to adjust for any organization-specific conditions. Tables G-2, G-3, G-4, and G-5, outputs from Task 2-4, provide relevant inputs to the risk tables in Appendix I.</p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <caption>Table G-2: Likelihood of Threat Event Initiation (Adversarial)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Qualitative</th>
+            <th scope="col">Quantitative</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @threat_event_initiation_likelihoods.each do |likelihood| %>
+          <tr>
+            <th scope="row"><%= likelihood.qualitative %></th>
+            <td><%= likelihood.quantitative %></td>
+            <td><%= likelihood.description %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <table class="table">
+        <caption>Table G-3: Likelihood of Threat Event Occurence (Non-Adversarial)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Qualitative</th>
+            <th scope="col">Quantitative</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @threat_event_occurence_likelihoods.each do |likelihood| %>
+          <tr>
+            <th scope="row"><%= likelihood.qualitative %></th>
+            <td><%= likelihood.quantitative %></td>
+            <td><%= likelihood.description %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <table class="table">
+        <caption>Table G-4: Likelihood of Threat Event Resulting in Adverse Impacts</caption>
+        <thead>
+          <tr>
+            <th scope="col">Qualitative</th>
+            <th scope="col">Quantitative</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @threat_event_adverse_impact_likelihoods.each do |likelihood| %>
+          <tr>
+            <th scope="row"><%= likelihood.qualitative %></th>
+            <td><%= likelihood.quantitative %></td>
+            <td><%= likelihood.description %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-</section>
-<section class="usa-grid usa-section">
-  <div class="usa-width-one-whole">
-    <table class="usa-table-borderless">
-      <caption>Table G-2: Likelihood of Threat Event Initiation (Adversarial)</caption>
-      <thead>
-        <tr>
-          <th scope="col">Qualitative</th>
-          <th scope="col">Quantitative</th>
-          <th scope="col">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @threat_event_initiation_likelihoods.each do |likelihood| %>
-        <tr>
-          <th scope="row"><%= likelihood.qualitative %></th>
-          <td><%= likelihood.quantitative %></td>
-          <td><%= likelihood.description %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <table class="usa-table-borderless">
-      <caption>Table G-3: Likelihood of Threat Event Occurence (Non-Adversarial)</caption>
-      <thead>
-        <tr>
-          <th scope="col">Qualitative</th>
-          <th scope="col">Quantitative</th>
-          <th scope="col">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @threat_event_occurence_likelihoods.each do |likelihood| %>
-        <tr>
-          <th scope="row"><%= likelihood.qualitative %></th>
-          <td><%= likelihood.quantitative %></td>
-          <td><%= likelihood.description %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <table class="usa-table-borderless">
-      <caption>Table G-4: Likelihood of Threat Event Resulting in Adverse Impacts</caption>
-      <thead>
-        <tr>
-          <th scope="col">Qualitative</th>
-          <th scope="col">Quantitative</th>
-          <th scope="col">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @threat_event_adverse_impact_likelihoods.each do |likelihood| %>
-        <tr>
-          <th scope="row"><%= likelihood.qualitative %></th>
-          <td><%= likelihood.quantitative %></td>
-          <td><%= likelihood.description %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</section>
+</div>
 <% end %>

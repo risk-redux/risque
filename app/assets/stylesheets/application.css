@@ -15,7 +15,6 @@
  *= require typography
  *= require dashboard
  *= require jumbotron
- *= require font-awesome/font-awesome
  *= require_tree .
  *= require_self
  */

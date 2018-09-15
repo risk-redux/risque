@@ -1,6 +1,4 @@
 class ThreatOrientedRiskObjectsController < ApplicationController
-  before_action :authenticate
-
   def index
     @threat_oriented_risk_objects = ThreatOrientedRiskObject.all
   end

@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171227144214) do
+ActiveRecord::Schema.define(version: 2017_12_27_144214) do
 
-  create_table "adversarial_threat_source_capabilities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "adversarial_threat_source_capabilities", force: :cascade do |t|
     t.string "qualitative"
     t.integer "quantitative"
     t.text "description"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "adversarial_threat_source_intents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "adversarial_threat_source_intents", force: :cascade do |t|
     t.string "qualitative"
     t.integer "quantitative"
     t.text "description"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "adversarial_threat_source_targetings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "adversarial_threat_source_targetings", force: :cascade do |t|
     t.string "qualitative"
     t.integer "quantitative"
     t.text "description"
@@ -36,14 +36,14 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "adverse_impacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "adverse_impacts", force: :cascade do |t|
     t.string "category"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "non_adversarial_threat_source_effects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "non_adversarial_threat_source_effects", force: :cascade do |t|
     t.string "qualitative"
     t.integer "quantitative"
     t.text "description"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "predisposing_condition_pervasivenesses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "predisposing_condition_pervasivenesses", force: :cascade do |t|
     t.string "qualitative"
     t.integer "quantitative"
     t.text "description"
@@ -59,14 +59,14 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "predisposing_conditions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "predisposing_conditions", force: :cascade do |t|
     t.string "category"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "threat_event_adverse_impact_likelihoods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "threat_event_adverse_impact_likelihoods", force: :cascade do |t|
     t.string "qualitative"
     t.integer "quantitative"
     t.text "description"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "threat_event_impacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "threat_event_impacts", force: :cascade do |t|
     t.string "qualitative"
     t.integer "quantitative"
     t.text "description"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "threat_event_initiation_likelihoods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "threat_event_initiation_likelihoods", force: :cascade do |t|
     t.string "qualitative"
     t.integer "quantitative"
     t.text "description"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "threat_event_occurence_likelihoods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "threat_event_occurence_likelihoods", force: :cascade do |t|
     t.string "qualitative"
     t.integer "quantitative"
     t.text "description"
@@ -98,14 +98,14 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "threat_event_relevances", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "threat_event_relevances", force: :cascade do |t|
     t.string "qualitative"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "threat_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "threat_events", force: :cascade do |t|
     t.string "category"
     t.string "ttp"
     t.text "description"
@@ -114,14 +114,14 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "threat_oriented_risk_objects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "threat_oriented_risk_objects", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "account_id"
   end
 
-  create_table "threat_sources", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "threat_sources", force: :cascade do |t|
     t.string "category"
     t.text "description"
     t.boolean "is_adversarial"
@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 20171227144214) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "vulnerability_severities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "vulnerability_severities", force: :cascade do |t|
     t.string "qualitative"
     t.integer "quantitative"
     t.text "description"

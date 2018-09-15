@@ -1,41 +1,45 @@
 <%- view_title "Threat-Oriented Risk Objects" %>
 
 <% content_for :main do %>
-<section class="usa-grid usa-section">
-  <div class="usa-width-one-third">
-    <h2>Threat-Oriented Risk Objects</h2>
-  </div>
-  <div class="usa-width-two-thirds">
-    <p>A threat-oriented approach starts with the identification of threat sources and threat events, and focuses on the development of threat scenarios; vulnerabilities are identified in the context of threats, and for adversarial threats, impacts are identified based on adversary intent.</p>
-    <p>
-      <%= link_to(new_threat_oriented_risk_object_path(), { class: "usa-button usa-button-big usa-button-primary" }) do %>
-        <i class="fa fa-plus-circle" aria-hidden="true"></i> New Risk Object
-      <% end %>
-    </p>
-  </div>
-</section>
-<section class="usa-grid usa-section">
-  <div class="usa-width-one-whole">
-    <table class="usa-table-borderless">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">Author</th>
-          <th scope="col">Created At</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @threat_oriented_risk_objects.each do |object| %>
-        <tr>
-          <th scope="row"><%= object.id %></th>
-          <td><%= object.title %></td>
-          <td>Karim Said</td>
-          <td><%= object.created_at %></td>
-        </tr>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h2>Threat-Oriented Risk Objects</h2>
+    </div>
+    <div class="col-8">
+      <p>A threat-oriented approach starts with the identification of threat sources and threat events, and focuses on the development of threat scenarios; vulnerabilities are identified in the context of threats, and for adversarial threats, impacts are identified based on adversary intent.</p>
+      <p>
+        <%= link_to(new_threat_oriented_risk_object_path(), { class: "usa-button usa-button-big usa-button-primary" }) do %>
+          <i class="fa fa-plus-circle" aria-hidden="true"></i> New Risk Object
         <% end %>
-      </tbody>
-    </table>
+      </p>
+    </div>
   </div>
-</section>
-<% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Created At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @threat_oriented_risk_objects.each do |object| %>
+          <tr>
+            <th scope="row"><%= object.id %></th>
+            <td><%= object.title %></td>
+            <td>Karim Said</td>
+            <td><%= object.created_at %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  <% end %>

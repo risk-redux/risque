@@ -8,27 +8,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Components
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to("Threat Sources", threat_sources_path(), { class: "dropdown-item" }) %>
+              <%= link_to("Threat Events", threat_events_path(), { class: "dropdown-item" }) %>
+              <div class="dropdown-divider"></div>
+              <%= link_to("Vulnerabilities", vulnerabilities_path(), { class: "dropdown-item" }) %>
+              <div class="dropdown-divider"></div>
+              <%= link_to("Likelihoods", likelihoods_path(), { class: "dropdown-item" }) %>
+              <div class="dropdown-divider"></div>
+              <%= link_to("Impacts", impacts_path(), { class: "dropdown-item" }) %>
+            </div>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
           <li class="nav-item <%= is_active?('static#about')%>">
             <%= link_to("About", about_path(), { class: "nav-link" }) %>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item <%= is_active?('some_route')%>">
-            <a class="nav-link" href="#">Link</a>
-          </li>
         </ul>
-        <form class="form-inline mt-2 mt-md-0">
-          <button type="button" class="btn btn-outline-primary">Log in</button>
-        </form>
       </div>
     </div>
   </nav>

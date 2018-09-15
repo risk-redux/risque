@@ -1,6 +1,4 @@
 class ThreatSourcesController < ApplicationController
-  before_action :authenticate
-
   def index
     @threat_sources = ThreatSource.all
     @adversarial_threat_source_capabilities = AdversarialThreatSourceCapability.all
