@@ -1,2 +1,0 @@
-class ThreatEventInitiationLikelihood < ApplicationRecord
-end

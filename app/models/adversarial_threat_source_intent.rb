@@ -1,2 +1,0 @@
-class AdversarialThreatSourceIntent < ApplicationRecord
-end
