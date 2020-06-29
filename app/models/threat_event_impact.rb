@@ -1,0 +1,2 @@
+class ThreatEventImpact < ApplicationRecord
+end

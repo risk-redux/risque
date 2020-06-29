@@ -1,0 +1,2 @@
+class AdversarialThreatSourceTargeting < ApplicationRecord
+end

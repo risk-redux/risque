@@ -1,0 +1,2 @@
+class NonAdversarialThreatSourceEffect < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class ThreatEventRelevance < ApplicationRecord
+end
