@@ -1,2 +1,0 @@
-class PredisposingCondition < ApplicationRecord
-end

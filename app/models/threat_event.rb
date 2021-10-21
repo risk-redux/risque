@@ -1,2 +1,0 @@
-class ThreatEvent < ApplicationRecord
-end
