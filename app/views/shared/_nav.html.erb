@@ -1,0 +1,20 @@
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-light" style="background-color: #ffffff;">
+    <div class="container">
+      <%= link_to(root_path(), { class: "navbar-brand", title: "risqué for NIST SP 800-30!" }) do %>
+      <%= "#{Rails.application.config.app_name}" %>
+      <i class="fas fa-exclamation-triangle text-warning"></i>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto text-right">
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
