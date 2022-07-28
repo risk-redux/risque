@@ -2,7 +2,7 @@
   <!-- Fixed navbar -->
   <nav class="navbar navbar-light" style="background-color: #ffffff;">
     <div class="container">
-      <%= link_to(root_path(), { class: "navbar-brand", title: "risqué for NIST SP 800-30!" }) do %>
+      <%= link_to(root_path(), { class: "navbar-brand", title: "control_freak for NIST SP 800-53 Revision 5!" }) do %>
       <%= "#{Rails.application.config.app_name}" %>
       <i class="fas fa-exclamation-triangle text-warning"></i>
       <% end %>
@@ -12,7 +12,9 @@
       
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto text-right">
-          
+          <li class="nav-item <%= is_active('about') %>">
+            <%= link_to("About", about_path(), { class: "nav-link" }) %>
+          </li>
         </ul>
       </div>
     </div>

@@ -1,0 +1,2 @@
+class PredisposingCondition < ApplicationRecord
+end

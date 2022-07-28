@@ -1,24 +1,9 @@
-# README
+# Welcome to `Risquè`!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+`Risquè` is a part of the [Risk Redux](https://risk-redux.io) project, which seeks to turn NIST frameworks into practical web applications.
 
-Things you may want to cover:
+Content comes from [NIST SP 800-30](https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final).
 
-* Ruby version
+## Contributing
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I'm open to [Issues](issues) and [Pull Requests](pulls)!

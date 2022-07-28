@@ -1,0 +1,2 @@
+class ThreatEventAdverseImpactLikelihood < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class ThreatSource < ApplicationRecord
+end

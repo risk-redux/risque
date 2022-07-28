@@ -1,2 +1,35 @@
-<h1>Static#index</h1>
-<p>Find me in app/views/static/index.html.erb</p>
+<%- view_title 'Welcome!' %>
+
+<% content_for :main do %>
+
+<!-- Tabbed Navigation -->
+<%= render "static/shared/tabbed_navigation" %>
+
+<!-- Tabbed Content -->
+<%= render "static/shared/tabbed_forms" %>
+
+<hr/>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card bg-light mb-3">
+      <div class="card-header"><h2>Markdown</h2></div>
+      <div class="card-body">
+        <p class="card-text">## XX-99 Lorem Ipsum</p>
+        <p class="card-text"><%= render "shared/lorem" %></p>
+      </div>
+    </div>    
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card bg-light mb-3">
+      <div class="card-header"><h2>JSON</h2></div>
+      <div class="card-body">
+        <p class="card-text"><%= render "shared/lorem_json" %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

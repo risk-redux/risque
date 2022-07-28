@@ -1,2 +1,65 @@
-<h1>Static#about</h1>
-<p>Find me in app/views/static/about.html.erb</p>
+<%- view_title 'About' %>
+
+<% content_for :main do %>
+<h1>About `Risquè`</h1>
+<p class="lead">`Risquè` facilitates vulnerability-oriented analysis of risk, in line with NIST SP 800-30:</p>
+
+<figure>
+  <blockquote class="blockquote">
+    <p>A vulnerability-oriented approach starts with a set of predisposing conditions or exploitable weaknesses/deficiencies in organizational information systems or the environments in which the systems operate, and identifies threat events that could exercise those vulnerabilities together with possible consequences of vulnerabilities being exercised.</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    <em>Chapter 2, Page 15</em>
+  </figcaption>
+</figure>
+
+<p>We've designed `Risquè` according to this analytical approach because we find that it allows assessors to focus on specific issues identified in the design, implementation, and operation of specific systems of interest. Additionally, this approach allows us to align with the `findings` schema defined by OSCAL.</p>
+
+<h1>Reference tables</h1>
+
+<h2>@adversarial_threat_source_capability</h2>
+<%= reference_table @adversarial_threat_source_capability %>
+
+<h2>@adversarial_threat_source_intent</h2>
+<%= reference_table @adversarial_threat_source_intent %>
+
+<h2>@adversarial_threat_source_targeting</h2>
+<%= reference_table @adversarial_threat_source_targeting %>
+
+<h2>@adverse_impact</h2>
+<%= reference_table @adverse_impact %>
+
+<h2>@non_adversarial_threat_source_effect</h2>
+<%= reference_table @non_adversarial_threat_source_effect %>
+
+<h2>@predisposing_condition_pervasiveness</h2>
+<%= reference_table @predisposing_condition_pervasiveness %>
+
+<h2>@predisposing_condition</h2>
+<%= reference_table @predisposing_condition %>
+
+<h2>@threat_event_adverse_impact_likelihood</h2>
+<%= reference_table @threat_event_adverse_impact_likelihood %>
+
+<h2>@threat_event_impact</h2>
+<%= reference_table @threat_event_impact %>
+
+<h2>@threat_event_initiation_likelihood</h2>
+<%= reference_table @threat_event_initiation_likelihood %>
+
+<h2>@threat_event_occurence_likelihood</h2>
+<%= reference_table @threat_event_occurence_likelihood %>
+
+<h2>@threat_event_relevance</h2>
+<%= reference_table @threat_event_relevance %>
+
+<h2>@threat_event</h2>
+<%= reference_table @threat_event %>
+
+<h2>@threat_source</h2>
+<%= reference_table @threat_source %>
+
+<h2>@vulnerability_severity</h2>
+<%= reference_table @vulnerability_severity %>
+
+<% end %>
