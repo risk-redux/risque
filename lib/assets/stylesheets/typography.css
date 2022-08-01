@@ -39,3 +39,8 @@ p{
 th, td{
   font-family: 'Fira Mono', monospace;
 }
+
+.form-label {
+  font-weight: 900;
+  margin-top: 1.10em;
+}

@@ -1,0 +1,21 @@
+<form>
+  <div class="form-group">
+    <label for="adversarial-event-initiation" class="form-label">Adversarial event initiation</label>
+    <input type="range" class="custom-range" min="0" max="100" id="adversarial-event-initiation">
+  </div>
+  <div class="form-group">
+    <label for="non-adversarial-event-occurrence" class="form-label">Non-adversarial event occurrence</label>
+    <input type="range" class="custom-range" min="0" max="100" id="non-adversarial-event-occurrence">
+  </div>
+  <div class="form-group">
+    <label for="adverse-impacts" class="form-label">Likelihood for adverse impact</label>
+    <input type="range" class="custom-range" min="0" max="100" id="adverse-impacts">
+  </div>
+  <div class="form-group">
+    <label for="likelihood-notes" class="form-label">Notes</label>
+    <textarea class="form-control" id="likelihood-notes" rows="5" placeholder="We believe the overall likelhood of the described threat scenerios to be `Low|Moderate|High`."></textarea>
+    <small id="findings-help" class="form-text text-muted">
+      <i class="far fa-info-circle"></i> It helps to add a prose description of your rationale, but keep it clear andconcise!
+    </small>
+  </div>
+</form>

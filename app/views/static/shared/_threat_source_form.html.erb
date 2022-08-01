@@ -1,0 +1,30 @@
+<form>
+  <div class="form-group">
+    <label for="threat-source-category" class="form-label">Category</label>
+    <select id="threat-source-category" class="form-select" aria-label="Threat source category">
+      <option selected>--</option>
+      <% @threat_source.all.each do |c| %>
+      <option value="<%= c.id %>"><%= c.category %></option>
+      <% end %>
+    </select>
+    <small id="title-help" class="form-text text-muted">
+      <i class="far fa-info-circle"></i> Choose the most pertinent threat source.
+    </small>
+  </div>
+  <div class="form-group">
+    <label for="adversarial-capability" class="form-label">Adversarial capability</label>
+    <input type="range" class="custom-range" min="0" max="100" id="adversarial-capability">
+  </div>
+  <div class="form-group">
+    <label for="adversarial-intent" class="form-label">Adversarial intent</label>
+    <input type="range" class="custom-range" min="0" max="100" id="adversarial-intent">
+  </div>
+  <div class="form-group">
+    <label for="adversarial-targeting" class="form-label">Adversarial targeting</label>
+    <input type="range" class="custom-range" min="0" max="100" id="adversarial-targeting">
+  </div>
+  <div class="form-group">
+    <label for="non-adversarial-range-of-effects" class="form-label">Non-adversarial range of effects</label>
+    <input type="range" class="custom-range" min="0" max="100" id="non-adversarial-range-of-effects">
+  </div>
+</form>

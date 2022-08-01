@@ -1,16 +1,23 @@
-<form>
+<form data-action="change->static#render">
   <div class="form-group">
-    <label for="title">Title</label>
+    <label for="title" class="form-label">Title</label>
     <input type="text" class="form-control" id="title" placeholder="AT-02 Literacy Training and Awareness">
     <small id="title-help" class="form-text text-muted">
       <i class="far fa-info-circle"></i> Using a <a href="https://controlfreak.risk-redux.io/families">NIST SP 800-53 control family or name</a> can help contextualize the risk you're documenting.
     </small>
   </div>
   <div class="form-group">
-    <label for="findings">Findings</label>
-    <textarea class="form-control" id="findings" rows="5" placeholder="We found that the official required training was not actually a training at all but just a really tricky Wordle."></textarea>
-    <small id="findings-help" class="form-text text-muted">
-      <i class="far fa-info-circle"></i> The prose description of the findings revealed by your assessment should be clear and concise. Just the facts, pal!
+    <label for="finding" class="form-label">Finding</label>
+    <textarea class="form-control" id="finding" rows="5" placeholder="We found that the official required training was not actually a training at all but just a really tricky Wordle."></textarea>
+    <small id="finding-help" class="form-text text-muted">
+      <i class="far fa-info-circle"></i> The prose description of the finding revealed by your assessment should be clear and concise. Just the facts, pal!
     </small>
   </div>
+  <div class="form-group">
+    <label for="finding-severity" class="form-label">Finding severity</label>
+    <input type="range" class="custom-range" min="0" max="100" id="finding_severity">
+  </div>
+  <small id="severity-help" class="form-text text-muted">
+    <i class="far fa-info-circle"></i> Remember to balance the selection of severity against the overall categorization of the implicated boundary.
+  </small>
 </form>

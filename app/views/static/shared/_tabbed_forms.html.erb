@@ -1,26 +1,29 @@
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="meta" role="tabpanel" aria-labelledby="home-tab">
+<div class="tab-content" id="myTabContent" data-controller="static">
+  <div class="tab-pane fade show active" id="meta-form" role="tabpanel" aria-labelledby="home-tab">
     <div class="container mt-3">
       <%= render "static/shared/meta_form" %>
     </div>
   </div>
-  <div class="tab-pane fade" id="threat-sources" role="tabpanel" aria-labelledby="threat-sources-tab">
-    <div class="container">
+  <div class="tab-pane fade" id="threat-sources-form" role="tabpanel" aria-labelledby="threat-sources-tab">
+    <div class="container mt-3">
+      <%= render "static/shared/threat_source_form" %>
     </div>
   </div>
-  <div class="tab-pane fade" id="threat-events" role="tabpanel" aria-labelledby="threat-events-tab">
+  <!-- <div class="tab-pane fade" id="threat-events" role="tabpanel" aria-labelledby="threat-events-tab">
     <div class="container">
     </div>
-  </div>
-  <div class="tab-pane fade" id="likelihoods" role="tabpanel" aria-labelledby="likelihoods-tab">
+  </div> -->
+  <div class="tab-pane fade" id="likelihoods-form" role="tabpanel" aria-labelledby="likelihoods-tab">
     <div class="container">
+      <%= render "static/shared/likelihoods_form" %>
     </div>
   </div>
-  <div class="tab-pane fade" id="impacts" role="tabpanel" aria-labelledby="impacts-tab">
+  <div class="tab-pane fade" id="impacts-form" role="tabpanel" aria-labelledby="impacts-tab">
     <div class="container">
+      <%= render "static/shared/impacts_form" %>
     </div>
   </div>
-  <div class="tab-pane fade" id="recommendations" role="tabpanel" aria-labelledby="recommendations-tab">
+  <div class="tab-pane fade" id="recommendations-form" role="tabpanel" aria-labelledby="recommendations-tab">
     <div class="container mt-3">
       <%= render "static/shared/recommendations_form" %>
     </div>

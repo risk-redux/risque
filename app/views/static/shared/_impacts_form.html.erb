@@ -1,0 +1,22 @@
+<form>
+  <div class="form-group">
+    <label for="impact-category" class="form-label">Category</label>
+    <select id="impact-category" class="form-select" aria-label="Impact category">
+      <option selected>--</option>
+      <% @adverse_impact.all.each do |c| %>
+      <option value="<%= c.id %>"><%= c.category %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="adverse-impact" class="form-label">Adverse impact</label>
+    <input type="range" class="custom-range" min="0" max="100" id="adverse-impact">
+  </div>
+  <div class="form-group">
+    <label for="impact-notes" class="form-label">Notes</label>
+    <textarea class="form-control" id="impact-notes" rows="5" placeholder="Yikes! Glad it's not me. Just sayin'..."></textarea>
+    <small id="findings-help" class="form-text text-muted">
+      <i class="far fa-info-circle"></i> It helps to add a prose description of your rationale, but keep it clear andconcise!
+    </small>
+  </div>
+</form>
