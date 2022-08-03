@@ -4,7 +4,7 @@
     <select id="impact-category" class="form-select" aria-label="Impact category">
       <option selected>--</option>
       <% @adverse_impact.all.each do |c| %>
-      <option value="<%= c.id %>"><%= c.category %></option>
+      <option value="<%= c.category %>"><%= c.category %></option>
       <% end %>
     </select>
     <small id="impact-category-prose" class="form-text text-muted" style="white-space: pre-wrap;">

@@ -294,19 +294,19 @@ export default class extends Controller {
       case "--":
         impact_category_object = "";
         break;
-      case "1":
+      case "Harm to Operations":
         impact_category_object = ADVERSE_IMPACT[0];
         break;
-      case "2":
+      case "Harm to Assets":
         impact_category_object = ADVERSE_IMPACT[1];
         break;
-      case "3":
+      case "Harm to Individuals":
         impact_category_object = ADVERSE_IMPACT[2];
         break;
-      case "4":
+      case "Harm to Other Organizations":
         impact_category_object = ADVERSE_IMPACT[3];
         break;
-      case "5":
+      case "Harm to the Nation":
         impact_category_object = ADVERSE_IMPACT[4];
         break;
       default:
@@ -384,7 +384,7 @@ export default class extends Controller {
     $("#markdown-risk-summary").html(`We believe the overall risk posed by this finding to be <strong>*${qualitative_risk} (${risk})*</strong>.`);
   }
 
-  render_markdown_adversarial_threat_source(category) {
+  render_markdown_adversarial_threat_source(threat_source_object) {
     let capability = $("#adversarial-capability").val();
     let capability_object = ADVERSARIAL_THREAT_SOURCE_CAPABILITY[this.map_quantitative(capability)];
 
@@ -397,31 +397,46 @@ export default class extends Controller {
     let likelihood = $("#adversarial-event-initiation").val();
     let likelihood_object = THREAT_EVENT_INITIATION_LIKELIHOOD[this.map_quantitative(likelihood)];
 
-    $("#markdown-threat-source").html(`We believe the most pertinent threat source to be <strong>*${category}*</strong> with <strong>*${capability_object["qualitative"]} (${capability})*</strong> <em>_Capability_</em>, <strong>*${intent_object["qualitative"]} (${intent})*</strong> <em>_Intent_</em>, and <strong>*${targeting_object["qualitative"]} (${targeting})*</strong> <em>_Targeting_</em>:<br/><br/><em>_${} ${} ${} ${}_</em>`);
+    $("#markdown-threat-source").html(`We believe the most pertinent threat source to be <strong>*${threat_source_object["category"]}*</strong> with <strong>*${capability_object["qualitative"]} (${capability})*</strong> <em>_Capability_</em>, <strong>*${intent_object["qualitative"]} (${intent})*</strong> <em>_Intent_</em>, and <strong>*${targeting_object["qualitative"]} (${targeting})*</strong> <em>_Targeting_</em>:
+    <br/><br/>
+    <em>_${threat_source_object["description"]} ${capability_object["description"]} ${intent_object["description"]} ${targeting_object["description"]}_</em>
+    <br/><br/>
+    We believe the likelihood of an adversarial threat event to be <strong>*${likelihood_object["qualitative"]} (${likelihood})*</strong>; <em>_${likelihood_object["description"]}_</em>`);
   }
 
-  render_markdown_non_adversarial_threat_source(category) {
-    $("#markdown-threat-source").html(`We believe the most pertinent threat source to be <strong>*${category}*</strong> with potentially <strong>**</strong> <em>_Range of Effects_</em>:<br/><br/><em>__</em>`);
+  render_markdown_non_adversarial_threat_source(threat_source_object) {
+    let range_of_effects = $("#non-adversarial-range-of-effects").val();
+    let range_of_effects_object = NON_ADVERSARIAL_THREAT_SOURCE_EFFECT[this.map_quantitative(range_of_effects)];
+
+    let likelihood = $("#non-adversarial-event-occurence").val();
+    let likelihood_object = THREAT_EVENT_OCCURENCE_LIKELIHOOD[this.map_quantitative(likelihood)];
+
+    $("#markdown-threat-source").html(`We believe the most pertinent threat source to be <strong>*${threat_source_object["category"]}*</strong> with a potentially <strong>*${range_of_effects_object["qualitative"]} (${range_of_effects})*</strong> range of effects; <em>_${range_of_effects_object["description"]}_</em>:
+    <br/><br/>
+    <em>_${threat_source_object["description"]} ${range_of_effects_object["description"]}_</em>
+    <br/><br/>
+    We believe the likelihood of a threat event occurence to be <strong>*${likelihood_object["qualitative"]} (${likelihood})*</strong>; <em>_${likelihood_object["description"]}_</em>`);
   }
 
   render_markdown_threat_source() {
     let threat_source = $("#threat-source-category").val();
+    let threat_source_object = THREAT_SOURCE;
 
     switch(threat_source) {
       case "--":
         $("#markdown-threat-source").html(``);
         break;
       case "Adversarial":
-        this.render_markdown_adversarial_threat_source(threat_source);
+        this.render_markdown_adversarial_threat_source(threat_source_object[0]);
         break;
       case "Accidental":
-        this.render_markdown_non_adversarial_threat_source(threat_source);
+        this.render_markdown_non_adversarial_threat_source(threat_source_object[1]);
         break;
       case "Structural":
-        this.render_markdown_non_adversarial_threat_source(threat_source);
+        this.render_markdown_non_adversarial_threat_source(threat_source_object[2]);
         break;
       case "Environmental":
-        this.render_markdown_non_adversarial_threat_source(threat_source);
+        this.render_markdown_non_adversarial_threat_source(threat_source_object[3]);
         break;
       default:
         $("#markdown-threat-source").html(``);
@@ -469,6 +484,70 @@ export default class extends Controller {
     }
   }
 
+  render_json() {
+
+    let title = $("#title").val();
+    let prose = $("#finding").val();
+    let severity = $("#finding-severity").val();
+    let threat_source_category = $("#threat-source-category").val();
+    let threat_source_capability = "nil";
+    let threat_source_intent = "nil";
+    let threat_source_targeting = "nil";
+    let threat_source_range_of_effects = "nil";
+    let adversarial_event_initiation = "nil";
+    let non_adversarial_event_occurence = "nil";
+    let adverse_likelihood = $("#adverse-likelihoods").val();
+    let likelihood_notes = $("#likelihood-notes").val();
+    let impact_category = $("#impact-category").val();
+    let adverse_impact = $("#adverse-impact-severity").val();
+    let impact_notes = $("#impact-notes").val();
+
+    switch(threat_source_category) {
+      case "--":
+        threat_source_category = "nil";
+        break;
+      case "Adversarial":
+        threat_source_capability = $("#adversarial-capability").val();
+        threat_source_intent = $("#adversarial-intent").val();
+        threat_source_targeting = $("#adversarial-targeting").val();
+        adversarial_event_initiation = $("#adversarial-event-initiation").val();
+        break;
+      default:
+        threat_source_range_of_effects = $("#non-adversarial-range-of-effects").val();
+        non_adversarial_event_occurence = $("#non-adversarial-event-occurence").val();
+        break;
+    }
+
+    let json_object = {
+      "finding": {
+        "title": title,
+        "prose": prose,
+        "severity": severity,
+        "threat_source": {
+          "category": threat_source_category,
+          "capability": threat_source_capability,
+          "intent": threat_source_intent,
+          "targeting": threat_source_targeting,
+          "range-of-effects": threat_source_range_of_effects
+        },
+        "likelihood": {
+          "adversarial-event-initiation": adversarial_event_initiation,
+          "non-adversarial-event-occurence": non_adversarial_event_occurence,
+          "adverse-likelihood": adverse_likelihood,
+          "notes": likelihood_notes
+        },
+        "impact": {
+          "impact-category": impact_category,
+          "adverse-impact-severity": adverse_impact,
+          "notes": impact_notes
+        },
+        "recommendations": $("#recommendations").val()
+      }
+    };
+
+    $("#json-panel").html(`${JSON.stringify(json_object)}`);
+  }
+
   render() {
     console.log("Rendering!");
 
@@ -489,6 +568,6 @@ export default class extends Controller {
     // Content Rendering
 
     this.render_markdown();
-    // this.render_json();
+    this.render_json();
   }
 } 

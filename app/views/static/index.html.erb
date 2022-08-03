@@ -32,14 +32,5 @@ const ADVERSE_IMPACT_SEVERITY = <%= @threat_event_impact.all.to_json.html_safe %
 
 <%= render "static/shared/markdown_panel" %>
 
-<div class="row">
-  <div class="col-sm-12">
-    <div class="card bg-light mb-3">
-      <div class="card-header"><h2>JSON</h2></div>
-      <div class="card-body" id="json-panel">
-        <p class="card-text"><%= render "shared/lorem_json" %></p>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "static/shared/json_panel" %>
 <% end %>
