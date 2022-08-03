@@ -384,9 +384,55 @@ export default class extends Controller {
     $("#markdown-risk-summary").html(`We believe the overall risk posed by this finding to be <strong>*${qualitative_risk} (${risk})*</strong>.`);
   }
 
+  render_markdown_adversarial_threat_source(category) {
+    let capability = $("#adversarial-capability").val();
+    let capability_object = ADVERSARIAL_THREAT_SOURCE_CAPABILITY[this.map_quantitative(capability)];
+
+    let intent = $("#adversarial-intent").val();
+    let intent_object = ADVERSARIAL_THREAT_SOURCE_INTENT[this.map_quantitative(intent)];
+
+    let targeting = $("#adversarial-targeting").val();
+    let targeting_object = ADVERSARIAL_THREAT_SOURCE_TARGETING[this.map_quantitative(targeting)];
+
+    let likelihood = $("#adversarial-event-initiation").val();
+    let likelihood_object = THREAT_EVENT_INITIATION_LIKELIHOOD[this.map_quantitative(likelihood)];
+
+    $("#markdown-threat-source").html(`We believe the most pertinent threat source to be <strong>*${category}*</strong> with <strong>*${capability_object["qualitative"]} (${capability})*</strong> <em>_Capability_</em>, <strong>*${intent_object["qualitative"]} (${intent})*</strong> <em>_Intent_</em>, and <strong>*${targeting_object["qualitative"]} (${targeting})*</strong> <em>_Targeting_</em>:<br/><br/><em>_${} ${} ${} ${}_</em>`);
+  }
+
+  render_markdown_non_adversarial_threat_source(category) {
+    $("#markdown-threat-source").html(`We believe the most pertinent threat source to be <strong>*${category}*</strong> with potentially <strong>**</strong> <em>_Range of Effects_</em>:<br/><br/><em>__</em>`);
+  }
+
+  render_markdown_threat_source() {
+    let threat_source = $("#threat-source-category").val();
+
+    switch(threat_source) {
+      case "--":
+        $("#markdown-threat-source").html(``);
+        break;
+      case "Adversarial":
+        this.render_markdown_adversarial_threat_source(threat_source);
+        break;
+      case "Accidental":
+        this.render_markdown_non_adversarial_threat_source(threat_source);
+        break;
+      case "Structural":
+        this.render_markdown_non_adversarial_threat_source(threat_source);
+        break;
+      case "Environmental":
+        this.render_markdown_non_adversarial_threat_source(threat_source);
+        break;
+      default:
+        $("#markdown-threat-source").html(``);
+        break;
+    }
+  }
+
   render_risk_assessment() {
     $("#markdown-risk-assessment").html(`<strong>## Risk assessment</strong>`);
 
+    this.render_markdown_threat_source();
     this.render_markdown_likelihood();
     this.render_markdown_impact();
     this.render_markdown_risk_summary();
