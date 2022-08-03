@@ -1,30 +1,40 @@
-<form>
+<form data-action="change->static#render">
   <div class="form-group">
     <label for="threat-source-category" class="form-label">Category</label>
-    <select id="threat-source-category" class="form-select" aria-label="Threat source category">
-      <option selected>--</option>
-      <% @threat_source.all.each do |c| %>
-      <option value="<%= c.id %>"><%= c.category %></option>
-      <% end %>
-    </select>
     <small id="title-help" class="form-text text-muted">
       <i class="far fa-info-circle"></i> Choose the most pertinent threat source.
     </small>
+    <select id="threat-source-category" class="form-select" aria-label="Threat source category">
+      <option value="--" selected>--</option>
+      <% @threat_source.all.each do |c| %>
+      <option value="<%= c.category %>"><%= c.category %></option>
+      <% end %>
+    </select>
+    <small id="threat-source-category-prose" class="form-text text-muted">
+    </small>
   </div>
-  <div class="form-group">
+
+  <div class="form-group" id="adversarial-threat-source-form-group" style="display: none;">
     <label for="adversarial-capability" class="form-label">Adversarial capability</label>
-    <input type="range" class="custom-range" min="0" max="100" id="adversarial-capability">
-  </div>
-  <div class="form-group">
+    <input type="range" class="custom-range" min="1" max="10" id="adversarial-capability">
+    <small id="capability-prose" class="form-text text-muted">
+    </small>
+
     <label for="adversarial-intent" class="form-label">Adversarial intent</label>
-    <input type="range" class="custom-range" min="0" max="100" id="adversarial-intent">
-  </div>
-  <div class="form-group">
+    <input type="range" class="custom-range" min="1" max="10" id="adversarial-intent">
+    <small id="intent-prose" class="form-text text-muted">
+    </small>
+
     <label for="adversarial-targeting" class="form-label">Adversarial targeting</label>
-    <input type="range" class="custom-range" min="0" max="100" id="adversarial-targeting">
+    <input type="range" class="custom-range" min="1" max="10" id="adversarial-targeting">
+    <small id="targeting-prose" class="form-text text-muted">
+    </small>
   </div>
-  <div class="form-group">
+
+  <div class="form-group" id="non-adversarial-threat-source-form-group" style="display: none;">
     <label for="non-adversarial-range-of-effects" class="form-label">Non-adversarial range of effects</label>
-    <input type="range" class="custom-range" min="0" max="100" id="non-adversarial-range-of-effects">
+    <input type="range" class="custom-range" min="1" max="10" id="non-adversarial-range-of-effects">
+    <small id="non-adversarial-range-of-effects-prose" class="form-text text-muted">
+    </small>
   </div>
 </form>

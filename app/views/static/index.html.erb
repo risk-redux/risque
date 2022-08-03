@@ -5,6 +5,26 @@
 <!-- Tabbed Navigation -->
 <%= render "static/shared/tabbed_navigation" %>
 
+<!-- Loading up local variables for access by Stimulus JS methods. -->
+<script>
+const VULNERABILITY_SEVERITY = <%= @vulnerability_severity.all.to_json.html_safe %>;
+
+const THREAT_SOURCE = <%= @threat_source.all.to_json.html_safe %>;
+
+const ADVERSARIAL_THREAT_SOURCE_CAPABILITY = <%= @adversarial_threat_source_capability.all.to_json.html_safe %>;
+const ADVERSARIAL_THREAT_SOURCE_INTENT = <%= @adversarial_threat_source_intent.all.to_json.html_safe %>;
+const ADVERSARIAL_THREAT_SOURCE_TARGETING = <%= @adversarial_threat_source_targeting.all.to_json.html_safe %>;
+
+const NON_ADVERSARIAL_THREAT_SOURCE_EFFECT = <%= @non_adversarial_threat_source_effect.all.to_json.html_safe %>
+
+const THREAT_EVENT_ADVERSE_LIKELIHOOD = <%= @threat_event_adverse_impact_likelihood.all.to_json.html_safe %>;
+const THREAT_EVENT_INITIATION_LIKELIHOOD = <%= @threat_event_initiation_likelihood.all.to_json.html_safe %>;
+const THREAT_EVENT_OCCURENCE_LIKELIHOOD = <%= @threat_event_occurence_likelihood.all.to_json.html_safe %>;
+
+const ADVERSE_IMPACT = <%= @adverse_impact.all.to_json.html_safe %>;
+const ADVERSE_IMPACT_SEVERITY = <%= @threat_event_impact.all.to_json.html_safe %>;
+</script>
+
 <!-- Tabbed Content -->
 <%= render "static/shared/tabbed_forms" %>
 

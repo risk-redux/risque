@@ -1,23 +1,27 @@
 <form data-action="change->static#render">
   <div class="form-group">
-    <label for="title" class="form-label">Title</label>
-    <input type="text" class="form-control" id="title" placeholder="AT-02 Literacy Training and Awareness">
+    <label for="title" class="form-label">* Title</label>
     <small id="title-help" class="form-text text-muted">
       <i class="far fa-info-circle"></i> Using a <a href="https://controlfreak.risk-redux.io/families">NIST SP 800-53 control family or name</a> can help contextualize the risk you're documenting.
     </small>
+    <input type="text" class="form-control" id="title" placeholder="AT-02 Literacy Training and Awareness">
   </div>
+
   <div class="form-group">
-    <label for="finding" class="form-label">Finding</label>
-    <textarea class="form-control" id="finding" rows="5" placeholder="We found that the official required training was not actually a training at all but just a really tricky Wordle."></textarea>
+    <label for="finding" class="form-label">* Finding</label>
     <small id="finding-help" class="form-text text-muted">
       <i class="far fa-info-circle"></i> The prose description of the finding revealed by your assessment should be clear and concise. Just the facts, pal!
     </small>
+    <textarea class="form-control" id="finding" rows="5" placeholder="We found that the official required training was not actually a training at all but just a really tricky Wordle."></textarea>
   </div>
-  <div class="form-group">
+ 
+  <div class="form-group" id="finding-severity-form-group" style="display: none;">
     <label for="finding-severity" class="form-label">Finding severity</label>
-    <input type="range" class="custom-range" min="0" max="100" id="finding_severity">
+    <small id="severity-help" class="form-text text-muted">
+      <i class="far fa-info-circle"></i> Remember to balance the selection of severity against the overall categorization of the implicated boundary.
+    </small>
+    <input type="range" class="custom-range" min="1" max="10" id="finding-severity">
+    <small id="finding-severity-prose" class="form-text text-muted">
+    </small>
   </div>
-  <small id="severity-help" class="form-text text-muted">
-    <i class="far fa-info-circle"></i> Remember to balance the selection of severity against the overall categorization of the implicated boundary.
-  </small>
 </form>

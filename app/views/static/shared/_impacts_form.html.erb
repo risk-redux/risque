@@ -1,5 +1,5 @@
-<form>
-  <div class="form-group">
+<form data-action="change->static#render">
+  <div class="form-group" id="impact-category-form-group">
     <label for="impact-category" class="form-label">Category</label>
     <select id="impact-category" class="form-select" aria-label="Impact category">
       <option selected>--</option>
@@ -7,16 +7,22 @@
       <option value="<%= c.id %>"><%= c.category %></option>
       <% end %>
     </select>
-  </div>
-  <div class="form-group">
-    <label for="adverse-impact" class="form-label">Adverse impact</label>
-    <input type="range" class="custom-range" min="0" max="100" id="adverse-impact">
-  </div>
-  <div class="form-group">
-    <label for="impact-notes" class="form-label">Notes</label>
-    <textarea class="form-control" id="impact-notes" rows="5" placeholder="Yikes! Glad it's not me. Just sayin'..."></textarea>
-    <small id="findings-help" class="form-text text-muted">
-      <i class="far fa-info-circle"></i> It helps to add a prose description of your rationale, but keep it clear andconcise!
+    <small id="impact-category-prose" class="form-text text-muted" style="white-space: pre-wrap;">
     </small>
+  </div>
+
+  <div class="form-group" id="adverse-impact-severity-form-group">
+    <label for="adverse-impact-severity" class="form-label">Adverse impact</label>
+    <input type="range" class="custom-range" min="1" max="10" id="adverse-impact-severity">
+    <small id="adverse-impact-severity-prose" class="form-text text-muted" style="white-space: pre-wrap;">
+    </small>
+  </div>
+  
+  <div class="form-group" id="impact-notes-form-group">
+    <label for="impact-notes" class="form-label">Notes</label>
+    <small id="impact-notes-help" class="form-text text-muted">
+      <i class="far fa-info-circle"></i> It helps to add a prose description of your rationale, but keep it clear and brief!
+    </small>
+    <textarea class="form-control" id="impact-notes" rows="5" placeholder="Yikes! Glad it's not me. Just sayin'..."></textarea>
   </div>
 </form>
