@@ -1,8 +1,6 @@
-# Welcome to Risquè!
+# Welcome to risquè!
 
-Risquè is a part of the [Risk Redux](https://risk-redux.io) project, which seeks to turn NIST frameworks into practical web applications.
-
-Content comes from [NIST SP 800-30](https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final).
+Modeling risks and documenting problems within system boundaries is a critical aspect of continuous monitoring, because you have to be able to communicate about what's wrong before you can fix anything. _[NIST SP 800-30, Guide for Conducting Risk Assessments](https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final)_ provides an approach to this conundrum and `risquè` provides an easy to use tool for leveraging those ideas into actual shareable content.
 
 ## Contributing
 
