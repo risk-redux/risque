@@ -1,0 +1,7 @@
+{
+  "name": "risque",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "rails-app",
+  "workspaceFolder": "/risque",
+  "postCreateCommand": "/risque/bin/setup"
+}

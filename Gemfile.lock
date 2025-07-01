@@ -139,6 +139,8 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
+    nokogiri (1.18.8-aarch64-linux-musl)
+      racc (~> 1.4)
     nokogiri (1.18.8-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.8-x86_64-darwin)
@@ -214,6 +216,7 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
+    sqlite3 (2.6.0-aarch64-linux-musl)
     sqlite3 (2.6.0-arm64-darwin)
     sqlite3 (2.6.0-x86_64-darwin)
     sqlite3 (2.6.0-x86_64-linux-gnu)
@@ -248,6 +251,7 @@ GEM
     zeitwerk (2.7.2)
 
 PLATFORMS
+  aarch64-linux-musl
   arm64-darwin-23
   arm64-darwin-24
   x86_64-darwin-20
@@ -274,7 +278,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.4.2p28
+   ruby 3.4.4p34
 
 BUNDLED WITH
    2.5.22
